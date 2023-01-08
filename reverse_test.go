@@ -5,6 +5,9 @@ import (
 	"unicode/utf8"
 )
 
+// Fuzz run with $ go test -fuzz=Fuzz will run until an error or when stopped wigth ctrl - c
+// $ go test -fuzz=Fuzz -fuzztime 30s will run for 30s and then stop
+
 func FuzzReverse(f *testing.F) {
 	testcases := []string{"Hello, world", " ", "!12345"}
 	for _, tc := range testcases {
